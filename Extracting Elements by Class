@@ -16,3 +16,12 @@ content = ele.find_all('p')
 
 #showing the content
 print(content)
+
+''' 
+When we perform scraping the tags also get scrapped.
+If we just want to have text in the tags, then we need to do the following
+Taking the example with the element with 'p' tag in the div with class = 'entry-content'
+'''
+
+for lines in content:
+  print(lines.text)
