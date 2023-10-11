@@ -8,7 +8,7 @@ res = requests.get('url')
 print(res)
 
 #parsing HTML
-soup = BeautifulSoup(res.content, 'html-parser')
+soup = BeautifulSoup(res.content, 'html.parser')
 
 '''
 we are getting an element in the div with id = main 
