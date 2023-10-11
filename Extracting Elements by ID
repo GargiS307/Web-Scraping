@@ -1,0 +1,24 @@
+import requests 
+from bs4 import BeautifulSoup
+
+#getting the src
+res = requests.get('url')
+
+#checking the status code 200
+print(res)
+
+#parsing HTML
+soup = BeautifulSoup(res.content, 'html-parser')
+
+'''
+we are getting an element in the div with id = main 
+let the element be with 'li' tag, in the 'ul' tag with class = 'leftBarList' in the id = 'main'
+'''
+ele =  soup.find('div', id = 'main')
+content = ele.find('ul', class= 'leftBarList')
+final_content = content.find_all('li') 
+
+#will give all the list elements of the ul list with class leftBarList in the div id main in the final_content object 
+
+#showing the content in final_content
+print(final_content)
