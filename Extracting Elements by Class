@@ -8,7 +8,7 @@ res= requests.get('url') #syntax requests.method('url/method', data= {'key':'val
 print(res) #print(res.status_code)
 
 #parsing HTML
-soup = BeautifulSoup(res.content, 'html-parser')
+soup = BeautifulSoup(res.content, 'html.parser')
 
 #finding the content in 'p' tag within the 'div' with class name = 'class_name' (any eg:entry-content)
 ele = soup.find('div', class= 'entry-content')
