@@ -1,0 +1,21 @@
+import requests
+from bs4 from BeautifulSoup
+
+#Getting from resource
+res = requests.get('url') 
+
+#Parsing the HTML 
+soup = BeautifulSoup(res.content, 'html.parser') 
+
+#if you want to extract 'href' tags from a particular div with class
+content = soup.find('div', class = 'class_name') #whatever the class is
+
+# find all the anchor tags with "href"  
+for link in soup.find_all('a'): 
+    print(link.get('href'))
+#This shows all the 'href' tag in the page 
+
+for 'href' tags from a particular div 
+for link in content.find_all('a'):
+  print(link.get('href'))
+
