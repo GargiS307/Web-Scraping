@@ -1,1 +1,26 @@
+import requests
+from bs4 import BeautifulSoup
 
+#getting the src
+res= requests.get('url') #syntax requests.method('url/method', data= {'key':'value'}, args) where method is get, post, patch, put, delete, head
+
+#checking the status code 200
+print(res) #print(res.status_code)
+
+#parsing HTML
+soup = BeautifulSoup(res.content, 'html.parser')
+
+images_list = [] #Making a list to store all the images specifications 
+images = soup.select('img')  #extracting all the images in the html document to the images object
+
+#To clean the images list with specific content
+for image in images:
+  src=image.get('src')
+  alt = image.alt('alt')
+  images_list.append({'src' : src, 'alt':alt})
+#We have filled the images_list object with the dictionary elements containing the source name and the alternative name
+
+#To show all the elements in image_list object
+for images in image_list:
+  print(image)
+  
