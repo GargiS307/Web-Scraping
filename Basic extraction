@@ -1,1 +1,16 @@
-i
+import requests
+from bs4 import BeautifulSoup
+
+#getting the source for scrapping
+response = requests.get('url')
+
+#checking the status code 200
+print(response)
+
+#now parsing the HTML
+soup = BeautifulSoup(response.content, 'html-parser')
+
+#printing the whole html content
+print(soup.prettify())
+
+
