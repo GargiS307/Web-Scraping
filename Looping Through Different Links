@@ -1,0 +1,17 @@
+import requests
+from bs4 import BeautifulSoup as bs
+
+URL = ['', '']
+
+for url in range(0,2):
+  response = requests.get(URL[url])
+  soup = bs(response.text,'html.parser')
+
+  titles = soup.find_all('div', attrs = {'class','head'})
+
+  for i in range(4,19):
+    if url+1>1:
+      print(f"{(i-3)+url*15}"+titles[i].text)
+    else:
+      print(f"{i-3}"+titles[i])
+  
