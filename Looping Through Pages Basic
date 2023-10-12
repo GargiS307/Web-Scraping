@@ -1,0 +1,17 @@
+#This time we are going to make use of text attributes and passing attributes 
+
+import requests 
+from bs4 import BeautifulSoup as bs #Giving an alias to BeautifulSoup using 'as'
+
+#Getting the source
+res= req.get('url') 
+
+#Parsing HTML
+soup = bs(res.text, 'html.parser')
+
+#Using the soup object, we are finding all occurences of tags with attributes class, head
+titles = soup.find_all('div', attrs={'class','head'})
+
+#Stores A list of all the occurences in the object titles
+
+print(titles[4].text) 
