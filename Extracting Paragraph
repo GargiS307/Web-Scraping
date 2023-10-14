@@ -1,0 +1,15 @@
+import urllib.request as r
+form bs4 import BeautifulSoup as bs
+
+r.urlretrieve(" url ")
+
+file = open("text_file.txt", 'r')
+contents = file.read()
+soup = bs(contents, 'html.parser')
+
+f = open('text1.txt',"w")
+
+for data in soup.find_all():
+  sum= data.get_txt()
+  f.writelines(sum)
+f.close()
